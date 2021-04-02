@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Prodig</title>
+	<meta name="description" content="TODO: FAUDRA METTRE UN PEU DE SEO, OPENGRAPHS, etc :)" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="apple-touch-icon" href="icon.png" />
+	<link href="../css/tailwind.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,600;1,700&display=swap"
+		rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet"> -->
+</head>
+
+<body class="subpixel-antialiased">
+
+	<!-- NAVBAR -->
+	<div
+		class="navbar w-screen shadow-md h-20 px-12 hidden lg:flex items-center justify-between fixed top-0 z-50 bg-white">
+		<a href="/">
+			<img class="h-10" src="./img/logo.svg" alt="Logo Prodig">
+		</a>
+		<div>
+			<ul class="flex items-center">
+				<li id="first-menu" class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Marketing digital</a>
+					<div id="first-dropdown" class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40" style="left: -1.5rem; right: -1.5rem; bottom: 0rem">
+						<div id="first-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="first-dropdown-text" class="flex flex-col items-center justify-center pt-6 bg-white">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">notre métier</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">nos prestations</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li id="second-menu" class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Coaching professionnel</a>
+					<div id="second-dropdown" class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40" style="left: -1.5rem; right: -1.5rem; bottom: 0rem;">
+						<div id="second-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="second-dropdown-text" class="flex flex-col items-center justify-center pt-6">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Pros du numérique</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Nos interventions</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a class="hover:text-blue">À propos</a></li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a class="hover:text-blue">Blog</a></li>
+				<button
+					class="ml-4 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8 hover:bg-orange transition duration-500 ease-in-out rounded-sm">Contact</button>
+			</ul>
+		</div>
+	</div>
+
+	<!-- NAVBAR MOBILE -->
+	<div
+		class="navbar w-screen shadow-md flex justify-between items-center px-6 lg:hidden h-16 fixed top-0 z-50 bg-white">
+		<img class="h-8" src="./img/logo.svg" alt="Logo Prodig">
+		<button class="menu"
+			onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); toggleMenuMobile();"
+			aria-label="Main Menu">
+			<svg width="50" height="50" viewBox="0 0 100 100">
+				<path class="line line1"
+					d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+				<path class="line line2" d="M 20,50 H 80" />
+				<path class="line line3"
+					d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+			</svg>
+		</button>
+	</div>
+
+	<!-- MENU MOBILE DEPLIANT -->
+	<div id="nav-menu-mobile" class="fixed h-full w-2/3 top-0 z-40 bg-white lg:hidden shadow-md" style="left: -67%">
+		<ul class="flex flex-col justify-center items-center h-full">
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-blue mb-2">Marketing digital</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Notre métier</a>
+				<a class="text-center">Nos prestations</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-orange mb-2">Coaching professionnel</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Pros du numérique</a>
+				<a class="text-center">Nos interventions</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>À propos</a></li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>Blog</a></li>
+			<button
+				class="mt-8 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8">Contact</button>
+		</ul>
+	</div>
+
+	<!-- MAIN CONTENT -->
+	<div class="relative pt-16 lg:pt-20">
+		<!-- HERO SECTION -->
+		<div class="w-screen flex flex-col lg:flex-row height-hero">
+			<div style="background-image: url(img/hero-nautique4.png); background-size: cover; background-repeat: no-repeat; background-position: center;"
+				class="h-1/2 md:h-full w-screen lg:w-1/2">
+				<div class="flex flex-col justify-center items-center h-full">
+					<h1 class="font-bold text-xl lg:text-4xl text-center lg:leading-normal">Conseil en <br><span
+							class="text-blue">marketing digital</span><br> pour PME</h1>
+					<button
+						class="my-4 lg:my-12 text-white font-bold text-sm lg:text-xl tracking-wider uppercase bg-blue py-2 px-6">En
+						savoir plus</button>
+					<div class="flex flex-col items-center">
+						<h3 class="text-md lg:text-2xl font-bold lg:mb-2">Perdu dans l’océan du digital ?</h3>
+						<h4 class="text-md lg:text-2xl font-bold text-blue">Fixons le cap et naviguons vers la réussite.
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div style="background-image: url(img/hero-aerien.png); background-size: cover; background-repeat: no-repeat; background-position: center;"
+				class="h-1/2 md:h-full w-screen lg:w-1/2">
+				<div class="flex flex-col justify-center items-center h-full">
+					<h1 class="font-bold text-xl lg:text-4xl text-center lg:leading-normal"><span
+							class="text-orange">Coach</span> pour <br> professionnels du<br> numérique</h1>
+					<button
+						class="my-4 lg:my-12 text-white font-bold text-sm lg:text-xl tracking-wider uppercase bg-orange py-2 px-6">En
+						savoir plus</button>
+					<div class="flex flex-col items-center">
+						<h3 class="text-md lg:text-2xl font-bold lg:mb-2">Englué dans un problème professionnel ?</h3>
+						<h4 class="text-md lg:text-2xl font-bold text-orange">Prenons ensemble de la hauteur.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CONTAINER MA DOUBLE COMPETENCE -->
+		<div class="container mx-auto xl:px-24 2xl:px-48 my-20 px-8 lg:px-0">
+			<div class="flex justify-center items-center">
+				<div class="flex flex-col">
+					<h3 class="text-2xl lg:text-4xl font-bold uppercase mb-4 tracking-wider text-center">Conseil & Coaching</h3>
+					<svg height="5" width="100" class="mx-auto">
+						<line x1="0" y1="0" x2="100" y2="0" style="stroke:#FE5F49;stroke-width:10" />
+					</svg>
+					<p class="text-lg lg:text-xl mt-4 text-center">Ma double compétence <br>pour accélerer votre développement.</p>
+				</div>
+			</div>
+			<div class="my-6 xl:my-12 flex flex-col items-center justify-between lg:flex-row lg:justify-between lg:items-center">
+				<div style="background-color: #F1F3FE;"
+					class="w-full h-full lg:w-96 lg:h-80 rounded-lg shadow-md py-8 px-6 flex flex-col items-center justify-center relative triangle-right transform lg:scale-75 xl:scale-100">
+					<h3 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-6"><span class="text-blue">Marketing </span>digital</h3>
+					<svg height="5" width="100">
+						<line x1="0" y1="0" x2="100" y2="0" style="stroke:#d3d8f7;;stroke-width:10" />
+					</svg>
+					<p class="text-center mt-3 lg:mt-6 text-sm lg:text-lg">J’aide votre PME à transposer sa stratégie commerciale sur tous
+						les canaux qu’offre le digital, et à en saisir toutes les opportunités.</p>
+					<button
+						class="mt-3 lg:mt-6 text-blue font-bold text-sm lg:text-md tracking-wider uppercase border-4 py-1 px-3 lg:py-2 lg:px-6 rounded-lg transition ease-in-out duration-500 hover:bg-blue hover:text-white hover:border-0">Nos
+						prestations</button>
+				</div>
+				<div class="flex-col my-12 lg:my-0">
+					<img class=" h-48 lg:h-52 xl:h-64" src="./img/franck-pelagatti4.png" alt="Franck Pelagatti">
+					<p class="mt-2 mb-2 text-center font-bold">Franck Pelagatti</p>
+				</div>
+				<div style="background-color: #FEF6F5;"
+					class="w-full h-full lg:w-96 lg:h-80 rounded-lg shadow-md py-8 px-6 flex flex-col items-center justify-center relative triangle-left transform lg:scale-75 xl:scale-100">
+					<h3 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-6"><span class="text-orange">Coaching </span>professionnel</h3>
+					<svg height="5" width="100">
+						<line x1="0" y1="0" x2="100" y2="0" style="stroke:#f3d7d3;stroke-width:10" />
+					</svg>
+					<p class="text-center mt-3 lg:mt-6 text-sm lg:text-lg">Je vous aide à dépasser l’obstacle qui freine votre
+						développement professionnel et à exploiter pleinement toutes vos compétences. </p>
+					<button
+						class="mt-3 lg:mt-6 text-orange font-bold text-sm lg:text-md tracking-wider uppercase border-4 py-1 px-3 lg:py-2 lg:px-6 rounded-lg transition ease-in-out duration-500 hover:bg-orange hover:text-white hover:border-0">Nos
+						services</button>
+				</div>
+				<!-- <div style="background-color: #FEF6F5;"
+					class="w-96 h-80 rounded-lg shadow-md py-8 px-6 flex flex-col items-center justify-center relative triangle-left transform md:scale-75 lg:scale-75 xl:scale-100">
+					<h3 class="text-3xl font-bold mb-6"><span class="text-orange">Coaching </span>professionnel</h3>
+					<svg height="5" width="100">
+						<line x1="0" y1="0" x2="100" y2="0" style="stroke:#f3d7d3;stroke-width:10" />
+					</svg>
+					<p class="text-center mt-6 text-lg">Je vous aide à dépasser l’obstacle qui freine votre
+						développement professionnel et à exploiter pleinement toutes vos compétences. </p>
+					<button
+						class="mt-6 text-orange font-bold text-md tracking-wider uppercase border-4 py-2 px-6 rounded-lg">Nos
+						services</button>
+				</div> -->
+			</div>
+			<div class="flex justify-center mt-16 lg:mt-0">
+				<button
+					class="text-white font-bold text-lg lg:text-xl tracking-wider uppercase bg-orange py-2 px-6 rounded-lg hover:bg-blue transition ease-in-out duration-500">En
+					savoir plus</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTAINER TEMOIGAGNES -->
+	<div style="background-color: #d6e4ff42;" class="py-24">
+		<div class="container mx-auto px-4 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="text-2xl lg:text-4xl font-bold uppercase mb-4 tracking-wider">Avis clients</h3>
+				<svg height="5" width="100">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#FE5F49;stroke-width:10" />
+				</svg>
+				<p class="text-lg lg:text-xl mt-4 text-center">Nos clients résument l'expérience PRODIG en quelques mots.<br>Un
+					grand merci à tous ces professionnels d'avoir ainsi exprimé leur confiance dont ils m'honorent.</p>
+			</div>
+			<div class="container-temoignages py-4 lg:py-16 justify-center">
+				<div class="card shadow-md py-4 px-4 lg:py-8 lg:px-8 my-4 lg:my-0">
+					<div class="flex flex-col">
+						<div class="flex justify-between w-full items-center h-20">
+							<img class="h-12 w-12 lg:h-16 lg:w-16" src="./img/placeholder.png" alt="Photo client Prodig">
+							<div class="flex flex-col w-full pl-4 lg:pl-8">
+								<p class="font-bold text-xl text-left">Arnaud Helard</p>
+								<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+								<div class="relative mt-2 lg:mt-4">
+									<div class="bar">
+										<div class="emptybar"></div>
+										<div class="filledbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center h-full">
+							<p class="text-left mt-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre stratégie de
+								marketing digital. Franck nous a accompagné de façon pragmatique, pro-active et en
+								expert absolu du domaine.</p>
+						</div>
+						<div class="flex justify-end">
+							<a class="text-orange mt-2 font-bold text-sm lg:text-md">Lire en entier ></a>
+						</div>
+					</div>
+				</div>
+				<div class="card shadow-md py-4 px-4 lg:py-8 lg:px-8 my-4 lg:my-0">
+					<div class="flex flex-col">
+						<div class="flex justify-between w-full items-center h-20">
+							<img class="h-12 w-12 lg:h-16 lg:w-16" src="./img/placeholder.png" alt="Photo client Prodig">
+							<div class="flex flex-col w-full pl-4 lg:pl-8">
+								<p class="font-bold text-xl text-left">Arnaud Helard</p>
+								<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+								<div class="relative mt-2 lg:mt-4">
+									<div class="bar">
+										<div class="emptybar"></div>
+										<div class="filledbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center h-full">
+							<p class="text-left mt-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre stratégie de
+								marketing digital. Franck nous a accompagné de façon pragmatique, pro-active et en
+								expert absolu du domaine.</p>
+						</div>
+						<div class="flex justify-end">
+							<a class="text-orange mt-2 font-bold text-sm lg:text-md">Lire en entier ></a>
+						</div>
+					</div>
+				</div>
+				<div class="card shadow-md py-4 px-4 lg:py-8 lg:px-8 my-4 lg:my-0">
+					<div class="flex flex-col">
+						<div class="flex justify-between w-full items-center h-20">
+							<img class="h-12 w-12 lg:h-16 lg:w-16" src="./img/placeholder.png" alt="Photo client Prodig">
+							<div class="flex flex-col w-full pl-4 lg:pl-8">
+								<p class="font-bold text-xl text-left">Arnaud Helard</p>
+								<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+								<div class="relative mt-2 lg:mt-4">
+									<div class="bar">
+										<div class="emptybar"></div>
+										<div class="filledbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center h-full">
+							<p class="text-left mt-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre stratégie de
+								marketing digital. Franck nous a accompagné de façon pragmatique, pro-active et en
+								expert absolu du domaine.</p>
+						</div>
+						<div class="flex justify-end">
+							<a class="text-orange mt-2 font-bold text-sm lg:text-md">Lire en entier ></a>
+						</div>
+					</div>
+				</div>
+				<div class="card shadow-md py-4 px-4 lg:py-8 lg:px-8 my-4 lg:my-0">
+					<div class="flex flex-col">
+						<div class="flex justify-between w-full items-center h-20">
+							<img class="h-12 w-12 lg:h-16 lg:w-16" src="./img/placeholder.png" alt="Photo client Prodig">
+							<div class="flex flex-col w-full pl-4 lg:pl-8">
+								<p class="font-bold text-xl text-left">Arnaud Helard</p>
+								<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+								<div class="relative mt-2 lg:mt-4">
+									<div class="bar">
+										<div class="emptybar"></div>
+										<div class="filledbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center h-full">
+							<p class="text-left mt-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre stratégie de
+								marketing digital. Franck nous a accompagné de façon pragmatique, pro-active et en
+								expert absolu du domaine.</p>
+						</div>
+						<div class="flex justify-end">
+							<a class="text-orange mt-2 font-bold text-sm lg:text-md">Lire en entier ></a>
+						</div>
+					</div>
+				</div>
+				<div class="card shadow-md py-4 px-4 lg:py-8 lg:px-8">
+					<div class="flex flex-col">
+						<div class="flex justify-between w-full items-center h-20">
+							<img class="h-12 w-12 lg:h-16 lg:w-16" src="./img/placeholder.png" alt="Photo client Prodig">
+							<div class="flex flex-col w-full pl-4 lg:pl-8">
+								<p class="font-bold text-xl text-left">Arnaud Helard</p>
+								<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+								<div class="relative mt-2 lg:mt-4">
+									<div class="bar">
+										<div class="emptybar"></div>
+										<div class="filledbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center h-full">
+							<p class="text-left mt-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre stratégie de
+								marketing digital. Franck nous a accompagné de façon pragmatique, pro-active et en
+								expert absolu du domaine.</p>
+						</div>
+						<div class="flex justify-end">
+							<a class="text-orange mt-2 font-bold text-sm lg:text-md">Lire en entier ></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-center mt-6">
+				<button
+					class="text-white font-bold text-lg lg:text-xl tracking-wider uppercase bg-orange py-2 px-6 rounded-lg hover:bg-blue transition ease-in-out duration-500">Tous
+					les avis</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="container mx-auto my-24 flex flex-col px-8 lg:px-24 xl:px-48">
+		<div class="flex mb-8">
+			<a href="/">
+				<img class="h-4" src="./img/logoprodig2.svg" alt="Logo Prodig">
+			</a>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between">
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Contactons-nous</p>
+				<div class="flex items-center mt-4">
+					<img class="h-6 fill-current text-orange" src="./img/phone.svg" alt="Téléphone">
+					<p class="text-xl ml-3 font-bold text-orange">(+33) 09 52 30 51 31</p>
+				</div>
+				<div class="flex items-center mt-2">
+					<img class="h-6" src="./img/mail.svg" alt="E-Mail">
+					<p class="text-xl ml-3 font-bold text-orange">bonjour@prodig.fr</p>
+				</div>
+			</div>
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Connectons-nous</p>
+				<div class="flex justify-start lg:justify-around items-center mt-4">
+					<div class="flex flex-col">
+						<div class="flex items-center justify-center">
+							<img class="h-8" src="./img/linkedin.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">LinkedIn</p>
+						</div>
+						<div class="flex items-center justify-center mt-2">
+							<img class="h-8" src="./img/calendly.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">Calendly</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<p class="text-2xl font-bold">Newsletter</p>
+				<div class="flex items-center mt-4">
+					<input type="mail" class="text-xl pl-3 pb-1 border-2 border-orange w-48 lg:w-full " placeholder="votre e-mail ici"></input>
+				</div>
+				<button
+					class="text-white font-bold text-lg lg:text-xl tracking-wider uppercase bg-orange text-left pl-3 py-1 mt-1 w-48 lg:w-full hover:bg-blue transition duration-500 ease-in-out">Je m'abonne ✉️</button>
+			</div>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between mt-16">
+			<div class="flex flex-col lg:flex-row">
+				<a class="text-orange font-bold uppercase text-lg mr-4">Mentions legales</a>
+				-
+				<a class="text-orange font-bold uppercase text-lg lg:ml-4">Politiques de protection de vos données</a>
+			</div>
+			<p class="font-bold text-2xl mt-4 lg:mt-0">PRODIG 2021 ©</p>
+		</div>
+	</div>
+
+	<script src="./../js/script.js"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXX"></script> -->
+	<!-- <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-XXXX')
+    </script> -->
+</body>
+
+</html>
