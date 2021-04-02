@@ -5,12 +5,12 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    // cssnano({
-    //   preset: 'default'
-    // }),
-    // purgecss({
-    //     content: ['./layouts/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
-    //     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-    // })
+    cssnano({
+      preset: 'default'
+    }),
+    purgecss({
+        content: ['./layouts/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+    })
   ]
 }

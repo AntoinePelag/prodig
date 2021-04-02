@@ -196,7 +196,7 @@ button {
     border-bottom: 50px solid transparent;
     border-right: 10px solid transparent;
     border-left: 50px solid #FEF6F5;
-    top: -75px;
+    top: -55px;
     margin: 0 auto;
     left: auto;
     transform: rotate(270deg);
@@ -217,7 +217,7 @@ button {
 }
 @media screen and (max-width: 1024px) {
   .triangle-right::after {
-    bottom: -75px;
+    bottom: -55px;
     margin: 0 auto;
     right: auto;
     transform: rotate(90deg);
