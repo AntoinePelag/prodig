@@ -229,9 +229,12 @@ button {
     transition: 0.35s cubic-bezier(0.75, 0.06, 0.09, 0.86);
 }
 
+
+/* purgecss start ignore */
 .nav-mobile-active {
     left: 0% !important;
 }
+/* purgecss ignore */
 
 /* CSS HAMBURGER ANIMATION */
 .menu {
