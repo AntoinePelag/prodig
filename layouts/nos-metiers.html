@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Prodig</title>
+	<meta name="description" content="TODO: FAUDRA METTRE UN PEU DE SEO, OPENGRAPHS, etc :)" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="apple-touch-icon" href="icon.png" />
+	<link href="../css/tailwind.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,600;1,700&display=swap"
+		rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet"> -->
+</head>
+
+<body class="subpixel-antialiased">
+
+	<!-- NAVBAR -->
+	<div
+		class="navbar w-screen shadow-md h-20 px-12 hidden lg:flex items-center justify-between fixed top-0 z-50 bg-white">
+		<a href="/">
+			<img class="h-10" src="./img/logo.svg" alt="Logo Prodig">
+		</a>
+		<div>
+			<ul class="flex items-center">
+				<li id="first-menu"
+					class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Marketing digital</a>
+					<div id="first-dropdown"
+						class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40"
+						style="left: -1.5rem; right: -1.5rem; bottom: 0rem">
+						<div id="first-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="first-dropdown-text" class="flex flex-col items-center justify-center pt-6 bg-white">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">notre métier</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">nos prestations</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li id="second-menu"
+					class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Coaching professionnel</a>
+					<div id="second-dropdown"
+						class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40"
+						style="left: -1.5rem; right: -1.5rem; bottom: 0rem;">
+						<div id="second-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="second-dropdown-text" class="flex flex-col items-center justify-center pt-6">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Pros du
+								numérique</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Nos
+								interventions</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a
+						class="hover:text-blue">À propos</a></li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a
+						class="hover:text-blue">Blog</a></li>
+				<button
+					class="ml-4 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8 hover:bg-orange transition duration-500 ease-in-out rounded-sm">Contact</button>
+			</ul>
+		</div>
+	</div>
+
+	<!-- NAVBAR MOBILE -->
+	<div
+		class="navbar w-screen shadow-md flex justify-between items-center px-6 lg:hidden h-16 fixed top-0 z-50 bg-white">
+		<img class="h-8" src="./img/logo.svg" alt="Logo Prodig">
+		<button class="menu"
+			onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); toggleMenuMobile();"
+			aria-label="Main Menu">
+			<svg width="50" height="50" viewBox="0 0 100 100">
+				<path class="line line1"
+					d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+				<path class="line line2" d="M 20,50 H 80" />
+				<path class="line line3"
+					d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+			</svg>
+		</button>
+	</div>
+
+	<!-- MENU MOBILE DEPLIANT -->
+	<div id="nav-menu-mobile" class="fixed h-full w-2/3 top-0 z-40 bg-white lg:hidden shadow-md" style="left: -67%">
+		<ul class="flex flex-col justify-center items-center h-full">
+			<li
+				class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-blue mb-2">Marketing digital</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Notre métier</a>
+				<a class="text-center">Nos prestations</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li
+				class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-orange mb-2">Coaching professionnel</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Pros du numérique</a>
+				<a class="text-center">Nos interventions</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>À propos</a></li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>Blog</a></li>
+			<button
+				class="mt-8 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8">Contact</button>
+		</ul>
+	</div>
+
+	<!-- HEADER NOS METIERS -->
+
+	<div class="relative pt-16 lg:pt-20">
+		<div class="w-screen flex flex-col lg:flex-row">
+			<div style="background-image: url(img/marketing-digital.png); background-size: cover; background-repeat: no-repeat; background-position: center;"
+				class="h-48 lg:h-96 w-screen flex justify-center items-center flex-col">
+				<h1 class="font-bold text-xl lg:text-4xl text-center lg:leading-normal">Conseil en marketing digital
+				</h1>
+				<svg height="5" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+				</svg>
+				<h3 class="font-bold text-xl lg:text-4xl text-center lg:leading-normal mt-4 uppercase text-blue">Nos
+					metiers</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mx-auto xl:px-24 2xl:px-48 my-12 px-8 lg:px-0">
+		<div class="flex flex-col justify-center items-center">
+			<img class="h-48 lg:h-52 xl:h-80 -mt-8 lg:mt-0" src="./img/marketing-digital-2.png" alt="Franck Pelagatti">
+			<h3 class="font-bold text-lg lg:text-2xl text-center lg:leading-normal mt-8 lg:mt-8">
+				A la fois concepteur et chef de projet,<br>
+				je mets en place et j’anime votre <span class="text-blue">dispositif digital</span>.
+			</h3>
+			<svg height="3" width="100" class="mx-auto mt-4">
+				<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+			</svg>
+			<p class="mt-8 text-center px-18 lg:px-36 text-md lg:text-lg">Nous développons ensemble et formalisons la
+				stratégie digitale
+				pour votre entreprise, afin qu’elle soit 100% alignée à vos spécificités et qu’elle réponde à vos enjeux
+				de développement – capter de nouveaux prospects, fidéliser les clients actifs, générer des demandes de
+				devis, augmenter les ventes en lignes, etc.
+				<br><br>
+				Sur cette base, je développe les projets brique par brique, avec l’aide de mon équipe de spécialistes
+				freelance : graphiste, développeur, rédactrice, etc. Une fois le dispositif en place, nous l’animons
+				ensemble dans la durée - news, promotion, lancement, etc. - en nous concentrant sur l’efficacité du
+				processus d’acquisition.</p>
+			<p class="text-center mt-8 font-bold text-blue text-lg lg:text-xl">L'océan digital est vaste, fixons le cap !</p>
+		</div>
+	</div>
+
+	<div class="flex justify-center py-8 my-4 lg:py-12 lg:my-16" style="background:#d4dbfe27">
+		<div class="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-8 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="font-bold text-xl lg:text-2xl text-center lg:leading-normal">
+					C'est quoi le <span class="text-blue">marketing digital</span> ?
+				</h3>
+				<svg height="3" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+				</svg>
+				<div class="flex lg:flex-row flex-col items-center justify-between mt-12">
+					<div class="bg-blue w-48 h-48 lg:w-64 lg:h-64 rounded-2xl" style="background-blend-mode: luminosity; background-image: url(img/marketing-digital-3.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+					</div>
+					<div class="w-full lg:w-2/3 lg:pl-12">
+						<p class="mt-8 lg:mt-0 text-center lg:text-left text-md lg:text-lg ">C’est l’utilisation
+							d’internet et des technologies au sens large pour atteindre vos clients, pénétrer de nouveaux
+							marchés, lancer de nouveaux produits, promouvoir de nouvelles offres. Le marketing digital est à
+							vocation commerciale ; on pourrait dire qu’il sert à « faire acheter ».
+							<br><br>
+							La communication digitale s’inscrit également dans ce processus. Ses actions sont moins directement
+							commerciales : elles sont plutôt orientées vers la notoriété de l’entreprise et la qualité de son
+							image de marque. Les actions de marketing digital intègrent toujours une dimension communication.
+						</p>
+						<p class="text-center lg:text-left  mt-8 font-bold text-blue text-lg lg:text-xl">Des actions concrètes pour naviguer vers votre réussite.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="flex justify-center py-8 my-4 lg:py-12 lg:my-16">
+		<div class="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-8 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="font-bold text-xl lg:text-2xl text-center lg:leading-normal">
+					C'est quoi un <span class="text-blue">dispositif digital</span> ?
+				</h3>
+				<svg height="3" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+				</svg>
+				<div class="flex lg:flex-row flex-col-reverse items-center justify-between mt-12">
+					<div class="w-full lg:w-2/3 lg:pr-12">
+						<p class="mt-8 lg:mt-0 text-center lg:text-left text-md lg:text-lg ">
+							<strong>C’est l’ensemble des actifs qui assurent la présence de votre entreprise sur le web.</strong>
+							<br><br>
+							Le rôle du conseil en marketing digital est justement de les « synchroniser » afin de maximiser l’efficacité de chaque élément et que tout l’ensemble soit orienté vers la performance.
+						</p>
+						<p class="text-center mt-8 lg:text-left font-bold text-blue text-lg lg:text-xl">Synchronisons vos actifs, allons plus loin !</p>
+					</div>
+					<div class="bg-blue w-48 h-48 lg:w-64 lg:h-64 rounded-2xl" style="background-blend-mode: luminosity; background-image: url(img/marketing-digital-4.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="flex justify-center py-8 lg:py-12 lg:mt-16 lg:mb-0" style="background:#d4dbfe27">
+		<div class="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-8 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="font-bold text-xl lg:text-2xl text-center lg:leading-normal">
+				Comment mesure-t-on la <span class="text-blue">performance digital</span> ?
+				</h3>
+				<svg height="3" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+				</svg>
+				<div class="flex lg:flex-row flex-col items-center justify-between mt-12">
+					<div class="bg-blue w-48 h-48 lg:w-64 lg:h-64 rounded-2xl" style="background-blend-mode: luminosity; background-image: url(img/marketing-digital-3.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+					</div>
+					<div class="w-full lg:w-2/3 lg:pl-12">
+						<p class="mt-8 lg:mt-0 text-center lg:text-left text-md lg:text-lg ">
+						Au moment où l’on détermine la stratégie digitale, il est très important de se mettre d’accord sur des indicateurs de performance spécifiques – on parle souvent de KPI (Key Performance Indicators). De façon assez générique, la performance digitale se mesure sur les critères suivants :
+						<br><br>
+						<span class="text-blue mr-2">●</span> L’efficacité des canaux d’acquisition (publicité, référencement naturel, etc.)<br>
+						<span class="text-blue mr-2">●</span> Les facteurs « on-site » : le temps passé sur le site, le nombre de pages consultées, etc.<br>
+						<span class="text-blue mr-2">●</span> L’attractivité sociale : nombre de « followers » sur vos pages sociales, portée de vos publications, etc.<br>
+						<span class="text-blue mr-2">●</span> Le volume de micro-conversions : abonnement à la newsletter, téléchargement d’un livre blanc, etc.<br>
+						<span class="text-blue mr-2">●</span> Le nombre de conversions : ventes réalisées pour un site e-commerce, demande de devis ou de contact sur un site vitrine.<br>
+						</p>
+						<p class="text-center lg:text-left mt-8 font-bold text-blue text-lg lg:text-xl">Mesurons la trajectoire et ajustons le gouvernail !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<!-- CTA BOTTOM STICKY -->
+	<div class="py-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:sticky lg:bottom-0 bg-white px-6" style="box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12)!important">
+		<p class="text-center lg:text-left font-bold text-sm lg:text-lg">Besoin d’un <span class="text-blue">1er échange téléphonique</span>, sans engagement, <br>pour discuter d’un sujet digital spécifique ? </p>
+		<button class="mt-2 text-white font-bold text-md lg:text-md tracking-wider uppercase bg-orange py-2 px-6 rounded-lg hover:bg-blue transition ease-in-out duration-500">
+			Fixer un rdv de 20mn
+		</button>
+	</div>
+
+
+
+
+	<!-- FOOTER -->
+	<div class="container mx-auto my-24 flex flex-col px-8 lg:px-24 xl:px-48">
+		<div class="flex mb-8">
+			<a href="/">
+				<img class="h-4" src="./img/logoprodig2.svg" alt="Logo Prodig">
+			</a>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between">
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Contactons-nous</p>
+				<div class="flex items-center mt-4">
+					<img class="h-6 fill-current text-orange" src="./img/phone.svg" alt="Téléphone">
+					<p class="text-xl ml-3 font-bold text-orange">(+33) 09 52 30 51 31</p>
+				</div>
+				<div class="flex items-center mt-2">
+					<img class="h-6" src="./img/mail.svg" alt="E-Mail">
+					<p class="text-xl ml-3 font-bold text-orange">bonjour@prodig.fr</p>
+				</div>
+			</div>
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Connectons-nous</p>
+				<div class="flex justify-start lg:justify-around items-center mt-4">
+					<div class="flex flex-col">
+						<div class="flex items-center justify-center">
+							<img class="h-8" src="./img/linkedin.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">LinkedIn</p>
+						</div>
+						<div class="flex items-center justify-center mt-2">
+							<img class="h-8" src="./img/calendly.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">Calendly</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<p class="text-2xl font-bold">Newsletter</p>
+				<div class="flex items-center mt-4">
+					<input type="mail" class="text-xl pl-3 pb-1 border-2 border-orange w-48 lg:w-full "
+						placeholder="votre e-mail ici"></input>
+				</div>
+				<button
+					class="text-white font-bold text-lg lg:text-xl tracking-wider uppercase bg-orange text-left pl-3 py-1 mt-1 w-48 lg:w-full hover:bg-blue transition duration-500 ease-in-out">Je
+					m'abonne ✉️</button>
+			</div>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between mt-16">
+			<div class="flex flex-col lg:flex-row">
+				<a class="text-orange font-bold uppercase text-lg mr-4">Mentions legales</a>
+				-
+				<a class="text-orange font-bold uppercase text-lg lg:ml-4">Politiques de protection de vos données</a>
+			</div>
+			<p class="font-bold text-2xl mt-4 lg:mt-0">PRODIG 2021 ©</p>
+		</div>
+	</div>
+
+	<script src="./../js/script.js"></script>
+	<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXX"></script> -->
+	<!-- <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-XXXX')
+    </script> -->
+</body>
+
+</html>
