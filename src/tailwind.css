@@ -1,8 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* purgecss start ignore */
+.blog-height {
+  height: 32rem;
+}
+@media screen and (max-width: 1024px) {
+  .blog-height {
+    height: 13rem;
+  }
+}
 .nav-mobile-active {
     left: 0% !important;
 }
