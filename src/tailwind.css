@@ -102,6 +102,26 @@ button {
 .container-temoignages {
   display: flex;
 }
+.card-2 {
+  display: flex;
+  /* height: 250px; */
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-in-out;
+  position: relative;
+  left: 0px;
+}
+.card-contact {
+  display: flex;
+  width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+  position: relative;
+  left: 0px;
+}
 .card {
   display: flex;
   /* height: 250px; */
@@ -166,7 +186,25 @@ button {
   transition: 0.4s ease-out;
 }
 
+.card-2:hover .filledbar {
+  width: 100%;
+  transition: 0.4s ease-out;
+}
 @media screen and (max-width: 1024px) {
+.card-contact {
+  width: 100%;
+}
+.card-2 {
+  display: flex;
+  /* height: 250px; */
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-in-out;
+  position: relative;
+  left: 0px;
+}
   .container-temoignages {
     flex-direction: column;
     align-items: center;

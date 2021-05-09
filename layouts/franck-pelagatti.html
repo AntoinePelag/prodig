@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Prodig</title>
+	<meta name="description" content="TODO: FAUDRA METTRE UN PEU DE SEO, OPENGRAPHS, etc :)" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="apple-touch-icon" href="icon.png" />
+	<link href="../css/tailwind.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,600;1,700&display=swap"
+		rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet"> -->
+</head>
+
+<body class="subpixel-antialiased">
+
+	<!-- NAVBAR -->
+	<div
+		class="navbar w-screen shadow-md h-20 px-12 hidden lg:flex items-center justify-between fixed top-0 z-50 bg-white">
+		<a href="/">
+			<img class="h-10" src="./img/logo.svg" alt="Logo Prodig">
+		</a>
+		<div>
+			<ul class="flex items-center">
+				<li id="first-menu"
+					class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Marketing digital</a>
+					<div id="first-dropdown"
+						class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40"
+						style="left: -1.5rem; right: -1.5rem; bottom: 0rem">
+						<div id="first-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="first-dropdown-text" class="flex flex-col items-center justify-center pt-6 bg-white">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">notre métier</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-blue transform transition duration-300 hover:scale-110 ">nos prestations</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li id="second-menu"
+					class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider relative">
+					<a class="z-50 relative">Coaching professionnel</a>
+					<div id="second-dropdown"
+						class="absolute bg-white px-4 rounded-lg top-4 text-center flex flex-col items-center justify-center z-40"
+						style="left: -1.5rem; right: -1.5rem; bottom: 0rem;">
+						<div id="second-dropdown-shadow" class="absolute w-full rounded-lg shadow-lg top-9 z-0"></div>
+						<div id="second-dropdown-text" class="flex flex-col items-center justify-center pt-6">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Pros du
+								numérique</a>
+							<hr class="my-2 w-2/3">
+							<a class="text-orange transform transition duration-300 hover:scale-110 ">Nos
+								interventions</a>
+						</div>
+					</div>
+				</li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a
+						class="hover:text-blue">À propos</a></li>
+				<svg height="10" width="10">
+					<circle cx="5" cy="5" r="2" fill="black" />
+				</svg>
+				<li class="xl:mx-4 mx-2 uppercase font-bold text-base lg:text-lg tracking-wider"><a
+						class="hover:text-blue">Blog</a></li>
+				<button
+					class="ml-4 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8 hover:bg-orange transition duration-500 ease-in-out rounded-sm">Contact</button>
+			</ul>
+		</div>
+	</div>
+
+	<!-- NAVBAR MOBILE -->
+	<div
+		class="navbar w-screen shadow-md flex justify-between items-center px-6 lg:hidden h-16 fixed top-0 z-50 bg-white">
+		<img class="h-8" src="./img/logo.svg" alt="Logo Prodig">
+		<button class="menu"
+			onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); toggleMenuMobile();"
+			aria-label="Main Menu">
+			<svg width="50" height="50" viewBox="0 0 100 100">
+				<path class="line line1"
+					d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+				<path class="line line2" d="M 20,50 H 80" />
+				<path class="line line3"
+					d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+			</svg>
+		</button>
+	</div>
+
+	<!-- MENU MOBILE DEPLIANT -->
+	<div id="nav-menu-mobile" class="fixed h-full w-2/3 top-0 z-40 bg-white lg:hidden shadow-md" style="left: -67%">
+		<ul class="flex flex-col justify-center items-center h-full">
+			<li
+				class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-blue mb-2">Marketing digital</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Notre métier</a>
+				<a class="text-center">Nos prestations</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li
+				class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider flex flex-col items-center">
+				<p class="text-xs text-orange mb-2">Coaching professionnel</p>
+				<hr class="w-1/2 mb-2">
+				<a class="text-center">Pros du numérique</a>
+				<a class="text-center">Nos interventions</a>
+			</li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>À propos</a></li>
+			<svg height="10" width="10">
+				<circle cx="5" cy="5" r="2" fill="black" />
+			</svg>
+			<li class="xl:mx-4 mx-2 my-2 uppercase font-bold text-base md:text-xl tracking-wider"><a>Blog</a></li>
+			<button
+				class="mt-8 text-white font-bold text-base lg:text-lg tracking-wider uppercase bg-blue py-1 px-8">Contact</button>
+		</ul>
+	</div>
+
+	<!-- HEADER NOS METIERS -->
+
+	<div class="relative pt-16 lg:pt-20">
+		<div class="w-screen flex flex-col lg:flex-row">
+			<div style="background-image: url(img/bg-blog2.png); background-size: cover; background-repeat: no-repeat; background-position: center;"
+				class="h-48 lg:h-80 w-screen flex justify-center items-center flex justify-around">
+				<div class="flex flex-col justify-start">
+					<h1 class="font-bold text-xl lg:text-4xl lg:leading-normal">Franck Pelagatti
+					</h1>
+					<svg height="5" width="100" class=" mt-4">
+						<line x1="0" y1="0" x2="100" y2="0" style="stroke:#000;stroke-width:10" />
+					</svg>
+					<h3 class="font-bold text-xl lg:text-4xl lg:leading-normal mt-4 uppercase">
+						<span class="text-blue">Conseil</span> & <span class="text-orange">Coaching</span>
+					</h3>
+				</div>
+				<div >
+					<img class="hidden lg:block lg:h-52 xl:h-42" src="./img/franck-pelagatti5.png" alt="Franck Pelagatti">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mx-auto xl:px-24 2xl:px-48 my-12 px-8 lg:px-0">
+		<div class="flex flex-col justify-center items-center">
+			<img class="lg:hidden h-48 lg:h-52 xl:h-42" src="./img/franck-pelagatti5.png" alt="Franck Pelagatti">
+			<h3 class="font-bold text-lg lg:text-2xl text-center lg:leading-normal mt-8 lg:mt-8">
+				Conseil et coach à la fois.
+			</h3>
+			<svg height="3" width="100" class="mx-auto mt-4">
+				<line x1="0" y1="0" x2="100" y2="0" style="stroke:#000;stroke-width:10" />
+			</svg>
+			<p class="mt-8 text-center px-18 lg:px-36 text-md lg:text-lg">
+				Dans mon activité de conseil, je conçois des solutions marketing pour l’<span class="font-bold ">entreprise</span> et 
+				les mets en action avec son équipe. Dans mon activité de coaching, j’aide un <span class="font-bold ">individu</span> à
+				 trouver ses propres solutions à un problème de développement professionnel - et je l’accompagne dans leur mise en œuvre.
+				 <br><br>
+				 <span class="font-bold">Je tiens beaucoup à conserver ces deux métiers</span>, qui s’enrichissent mutuellement. 
+				 <br><br>
+				 En tant que conseil, je suis engagé dans l’<span class="font-bold text-blue">opérationnel</span> des entreprises : contraintes, enjeux, objectifs, résultats, etc. Du coup, quand je suis en <span class="font-bold text-blue">position de coach</span>, 
+				 je comprends facilement le contexte professionnel que m’explique le client que j’accompagne.
+				 <br><br>
+				 Réciproquement, mon travail en tant que coach renforce bien sûr mon <span class="font-bold text-orange">aptitude à écouter</span> et à poser les bonnes questions ! 
+				 Cette posture me permet d’exercer mon <span class="font-bold text-orange">métier de conseil</span> dans un esprit de partage de compétences et de co-construction.
+			</p>
+		</div>
+	</div>
+
+	<div class="flex justify-center py-8 my-4 lg:py-24 lg:my-16" style="background:#d4dbfe27">
+		<div class="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-8 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="font-bold text-xl lg:text-2xl text-center lg:leading-normal">
+					Mon parcours <span class="text-blue">marketing</span>
+				</h3>
+				<svg height="3" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#4E6AFA;stroke-width:10" />
+				</svg>
+				<div class="flex flex-col items-center justify-between mt-12">
+					<!-- <div class="bg-blue w-48 h-48 lg:w-64 lg:h-80 rounded-2xl" style="background-blend-mode: luminosity; background-image: url(img/marketing-digital-3.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+					</div> -->
+					<div class="relative mt-8">
+						<img class="relative h-32 lg:h-52 xl:h-58 -mt-8 lg:mt-0 shadow-md rounded-lg z-30" src="./img/marketing-digital-2.png" alt="Franck Pelagatti">
+						<img class="absolute -inset-20 z-20 transform rotate-90 opacity-25 scale-75 lg:scale-75" src="./img/blob4.svg" alt="Franck Pelagatti">
+						<img class="absolute -top-20 -right-20 z-20 transform rotate-90 opacity-25 scale-75 lg:scale-100" src="./img/blob3.svg" alt="Franck Pelagatti">
+					</div>
+					<div class="w-full">
+						<p class="mt-12 text-center text-md lg:text-lg ">
+							La 1ère fois que j’ai entendu le nom « Google », c’était en 1998 aux Pays-Bas. J’y étais basé depuis 2 ans pour la
+							société Imation, un spin-off de 3M. Ce gigantesque groupe industriel pour lequel je travaillais avait en effet décidé de
+							se séparer de tous ses business « argentiques » qui allaient être bouleversés par l’arrivée des technologies digitales.
+							La révolution du numérique, je l’ai suivie de près…
+							<br><br>
+							Google, donc. En tant que <a class="text-orange underline" href="https://www.ingenieur-imac.fr/" target="_blank">diplômé en multimédia</a>, je me suis passionné pour les technologies du web, en y voyant des
+							applications dans chacune des différentes fonctions que j’ai tenues : communication, marketing, puis ventes, ce qui m’a
+							amené à prendre la direction générale d’une filiale commerciale (20 p., 15M€) durant 7 ans.
+							<br><br>
+							Lorsque j’ai décidé de créer ma propre entreprise, mon cap était clair : associer ma compétence en marketing et
+							communication à ma maîtrise des technologies du web. D’abord consultant indépendant, certifié « Marketing Digital » chez
+							<a href="https://www.wsiworld.com/" target="_blank" class="text-orange underline">WSI à Toronto</a>, j’ai ensuite créé et fait grandir <a href="https://www.skilz.fr/" target="_blank" class="text-orange underline">une chouette agence</a> avant d’en revendre mes parts pour reprendre
+							l’activité de conseil indépendant que j’exerce aujourd’hui. J’éprouve une immense satisfaction à travailler pour mes
+							entreprises clientes, à aider les dirigeants à optimiser leurs investissements dans le web, à accompagner leurs équipes
+							dans le déploiement des projets de marketing digital. Quel plaisir de les voir réussir !
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="flex justify-center py-8 my-4 lg:py-12 lg:my-16 shadow-lg">
+		<div class="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-8 lg:px-0">
+			<div class="flex flex-col justify-center items-center">
+				<h3 class="font-bold text-xl lg:text-2xl text-center lg:leading-normal">
+					Ma découverte du <span class="text-orange">coaching</span>
+				</h3>
+				<svg height="3" width="100" class="mx-auto mt-4">
+					<line x1="0" y1="0" x2="100" y2="0" style="stroke:#FE5F49;stroke-width:10" />
+				</svg>
+				<div class="flex lg:flex-row flex-col-reverse items-center justify-between mt-4">
+					<div class="w-full lg:w-full flex flex-col justify-center items-center lg:pr-12">
+						<p class="mt-8 lg:mt-0 text-center text-md lg:text-lg ">
+						Quant au coaching, signe du destin, je l’ai découvert au travers de mon activité de conseil en marketing. J’ai eu en
+						effet l’opportunité de contribuer à la stratégie d’acquisition digitale d’une des principales écoles françaises de
+						coaching, Coaching Ways, avec succès.</p>
+					<div class="card-2 shadow-md py-4 px-4 lg:py-8 lg:px-8 mt-8">
+						<div class="flex flex-col">
+							<div class="flex justify-between w-full items-center h-20">
+								<img class="h-12 w-12 lg:h-16 lg:w-16 rounded-full" src="./img/placeholder.png"
+									alt="Photo client Prodig">
+								<div class="flex flex-col w-full pl-4 lg:pl-8">
+									<p class="font-bold text-xl text-left">Arnaud Helard</p>
+									<p class="text-left text-sm tracking-tight lg:text-lg">Directeur Marketing Coaching Ways</p>
+									<div class="relative mt-2 lg:mt-4">
+										<div class="bar">
+											<div class="emptybar"></div>
+											<div class="filledbar"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flex h-full">
+								<p class="text-left mt-4 py-4 text-sm lg:text-lg">Nous avons fait appel à Franck dans le cadre de notre
+									stratégie marketing digitale.
+									Franck nous a accompagné de façon pragmatique, pro-active et en expert absolu du domaine. Généreux,
+									calme, professionnel, expert, ayant le souci de la performance, Franck est un partenaire de haut niveau.
+								</p>
+							</div>
+							<div class="flex justify-end">
+								<a href="#" class="text-orange mt-2 font-bold text-sm lg:text-md hover:text-orange hover:underline">Lire en
+									entier &gt;</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+					<p class="mt-8 text-center text-md lg:text-lg ">
+						Cette collaboration particulièrement enrichissante m’a permis de saisir la puissance et l’efficacité de cette discipline
+						d’accompagnement. J’ai donc décidé de suivre la formation Coaching Ways, jusqu’à obtenir la certification RNCP de Coach
+						Professionnel.
+						<br><br>
+						C’est un métier passionnant, tourné vers l’humain, qui me permet d’exploiter les qualités qu’on me reconnaît :
+						capacité d’écoute, sens du discernement, esprit constructif. Je ne suis pas parfait, j’ai mes défauts et mes propres
+						zones d’ombre, et tant mieux ; car cela me permet d’accueillir ceux des autres avec humilité.
+						<br><br>
+						C’est fou les ressources dont nous disposons en nous et que nous n’exploitons pas ! En tant que coach, et grâce
+						aussi au recul que m’apporte mon expérience, j’agis en révélateur et en accélérateur. Être le témoin des victoires de
+						mes clients est une source de motivation inépuisable.
+						<br><br>
+						A bientôt,
+						<br><br>
+						<span class="italic font-bold">Franck Pelagatti</span>
+					</p>
+			</div>
+		</div>
+	</div> 
+
+	<!-- FOOTER -->
+	<div class="container mx-auto my-24 flex flex-col px-8 lg:px-24 xl:px-48">
+		<div class="flex mb-8">
+			<a href="/">
+				<img class="h-4" src="./img/logoprodig2.svg" alt="Logo Prodig">
+			</a>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between">
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Contactons-nous</p>
+				<div class="flex items-center mt-4">
+					<img class="h-6 fill-current text-orange" src="./img/phone.svg" alt="Téléphone">
+					<p class="text-xl ml-3 font-bold text-orange">(+33) 09 52 30 51 31</p>
+				</div>
+				<div class="flex items-center mt-2">
+					<img class="h-6" src="./img/mail.svg" alt="E-Mail">
+					<p class="text-xl ml-3 font-bold text-orange">bonjour@prodig.fr</p>
+				</div>
+			</div>
+			<div class="flex flex-col mb-8 lg:mb-0">
+				<p class="text-2xl font-bold">Connectons-nous</p>
+				<div class="flex justify-start lg:justify-around items-center mt-4">
+					<div class="flex flex-col">
+						<div class="flex items-center justify-center">
+							<img class="h-8" src="./img/linkedin.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">LinkedIn</p>
+						</div>
+						<div class="flex items-center justify-center mt-2">
+							<img class="h-8" src="./img/calendly.svg" alt="LinkedIn Franck Pelagatti">
+							<p class="text-center font-bold text-xl ml-4">Calendly</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<p class="text-2xl font-bold">Newsletter</p>
+				<div class="flex items-center mt-4">
+					<input type="mail" class="text-xl pl-3 pb-1 border-2 border-orange w-48 lg:w-full "
+						placeholder="votre e-mail ici"></input>
+				</div>
+				<button
+					class="text-white font-bold text-lg lg:text-xl tracking-wider uppercase bg-orange text-left pl-3 py-1 mt-1 w-48 lg:w-full hover:bg-blue transition duration-500 ease-in-out">Je
+					m'abonne ✉️</button>
+			</div>
+		</div>
+		<div class="flex flex-col lg:flex-row lg:justify-between mt-16">
+			<div class="flex flex-col lg:flex-row">
+				<a class="text-orange font-bold uppercase text-lg mr-4">Mentions legales</a>
+				-
+				<a class="text-orange font-bold uppercase text-lg lg:ml-4">Politiques de protection de vos données</a>
+			</div>
+			<p class="font-bold text-2xl mt-4 lg:mt-0">PRODIG 2021 ©</p>
+		</div>
+	</div>
+
+	<script src="./../js/script.js"></script>
+	<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXX"></script> -->
+	<!-- <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-XXXX')
+    </script> -->
+</body>
+
+</html>
